@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Questions Selector with Options</title>
+   <!--<link rel="stylesheet" href="styles.css">-->
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: rgb(192, 148, 67);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#questionsContainer {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+.options {
+    margin-left: 20px;
+}
+
+#resultContainer {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>Random Question Selector</h1>
+        <button id="selectButton">Select 5 Random Questions</button>
+        <form id="questionsContainer">
+            <!-- Questions with options will be displayed here -->
+        </form>
+        <button id="submitButton" style="display:none;">Submit Answers</button>
+        <div id="resultContainer"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

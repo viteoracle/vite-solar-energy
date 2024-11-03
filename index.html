@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        /* Global styles */
+        body {
+            background-color: rgb(236, 206, 149);
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Contact section */
+        .contact-section {
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-description {
+            font-size: 1rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Form styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 0.9rem;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Submit button */
+        .form-submit {
+            display: inline-block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #0056b3;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .form-submit:hover {
+            background-color: #004199;
+        }
+
+        /* Upload container */
+        .upload-container {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+        }
+
+        .custom-file-upload {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        #file-upload {
+            display: none;
+        }
+
+        /* Account Information */
+        .account-info {
+            font-size: 0.9rem;
+            color: #555;
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 2rem;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 1rem 0;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        
+        footer p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <h2 class="contact-title">VITE ENERGY AND ICT SERVICES NIG LTD</h2>
+        <p class="contact-description">Innovative Approach to Technology.<br>
+           Fill out the form below and we'll get back to you as soon as possible.</p>
+        <form
+           action="https://formspree.io/f/xbljgqpj"
+           method="POST"
+           onsubmit="handleFormSubmit(event)">
+            <input type="hidden" name="access_key" value="1a01da4c-32bf-4647-a031-6671e3c04665" />
+
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input id="name" name="name" class="form-input" placeholder="Your name" type="text" required />
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" class="form-input" placeholder="Your email" type="email" required />
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone</label>
+                <input id="phone" name="phone" class="form-input" placeholder="+1 (234) 56789" type="text" required />
+            </div>
+            <div class="form-group">
+                <label for="product" class="form-label">Product Type</label>
+                <input id="product" name="product" class="form-input" placeholder="Felicity inverter" type="text" required />
+            </div>
+            <div class="form-group">
+                <label for="city" class="form-label">Current City</label>
+                <input id="city" name="city" class="form-input" placeholder="Warri, Delta State" type="text" required />
+            </div>
+            <div class="form-group">
+                <label for="country" class="form-label">Country</label>
+                <input id="country" name="country" class="form-input" placeholder="Nigeria" type="text" required />
+            </div>
+            <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Your product description" required></textarea>
+            </div>
+
+            <div class="account-info">
+                <strong>Account Information:</strong><br>
+                Account Number: 1810584746<br>
+                Bank: Access Bank<br>
+                Account Name: Temile Victor Mamus<br>
+                Account Holder: CEO VITE ENERGY AND ICT SERVICES NIGERIA LIMITED<br>
+                Registration Number: 7997368
+            </div>
+
+            <div class="upload-container">
+                <h3>Upload Your Receipt of Payment</h3>
+                <label for="file-upload" class="custom-file-upload">Choose File</label>
+                <input id="file-upload" type="file" name="file" required>
+            </div>
+
+            <button class="form-submit" type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 VITE ENERGY AND ICT SERVICES NIGERIA LIMITED. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for form reset -->
+    <script>
+         function clearForm(event) {
+            // Prevents the default form submission to avoid page reload
+            event.preventDefault();
+            
+            // Perform the form submission using Formspree
+            fetch("https://formspree.io/f/xbljgqpj", {
+                method: "POST",
+                body: new FormData(event.target)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Form submitted successfully!");
+                    // Clears all input fields
+                    document.getElementById("contactForm").reset();
+                } else {
+                    alert("Failed to submit form. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred. Please try again.");
+            });
+        }
+    </script>
+</body>
+</html>
